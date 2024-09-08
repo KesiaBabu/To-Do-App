@@ -1,0 +1,205 @@
+/* Basic reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;  /* Modern, clean font */
+    background: linear-gradient(135deg, #8EC5FC 0%, #E0C3FC 100%);  /* Vibrant gradient background */
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #333;
+    overflow-y: auto;  /* Add vertical scroll to avoid cutting off content */
+}
+
+
+.container {
+    width: 90%;
+    max-width: 900px;
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+    overflow-y: auto;
+}
+
+.container:hover {
+    transform: translateY(-10px);  /* Lift effect on hover */
+}
+
+h1 {
+    margin-bottom: 20px;
+    font-size: 2.8rem;
+    color: #333;
+    text-align: center;
+    letter-spacing: 1.5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;  /* Adds space between the icon and text */
+
+    /* Gradient text */
+    background: -webkit-linear-gradient(#7f00ff, #e100ff);
+    background: linear-gradient(#7f00ff, #e100ff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    /* text-fill-color: transparent; */
+}
+
+h1 i {
+    font-size: 1.5rem;  /* Adjust icon size */
+    color: #7f00ff;  /* Icon color */
+    margin-right: 10px;  /* Space between icon and text */
+}
+.title-icon {
+    width: 40px;  /* Adjust the size */
+    height: 40px;
+    margin-right: 10px;  /* Space between image and text */
+}
+
+
+
+/* Form styling */
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+input, textarea {
+    width: 100%;
+    max-width: 600px;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    font-size: 1rem;
+    background-color: #f9f9f9;
+    transition: all 0.3s ease;
+}
+
+input:focus, textarea:focus {
+    border-color: #7f00ff;  /* Highlighted border on focus */
+    box-shadow: 0 0 10px rgba(127, 0, 255, 0.2);
+}
+
+button {
+    padding: 12px 30px;
+    margin-top: 15px;
+    background-color: #7f00ff;
+    background-image: linear-gradient(to right, #7f00ff, #e100ff);
+    color: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+button:hover {
+    box-shadow: 0 10px 20px rgba(127, 0, 255, 0.3);
+    background-image: linear-gradient(to right, #e100ff, #7f00ff);
+}
+
+/* Error message styling */
+#error-msg {
+    color: red;
+    margin-top: 10px;
+}
+
+/* ToDo List styling */
+.todo-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    /* overflow-y: scroll; */
+}
+
+.todo-card {
+    background-color: #fff;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+    text-align: left;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    border: 2px solid transparent;
+}
+
+.todo-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    border: 2px solid #7f00ff;
+}
+
+.todo-card h2 {
+    margin-bottom: 10px;
+    font-size: 1.8rem;
+    color: #7f00ff;
+    background: -webkit-linear-gradient(#7f00ff, #e100ff);
+    background: -webkit-linear-gradient(#7f00ff, #e100ff);  /* Gradient for WebKit browsers */
+    background: linear-gradient(#7f00ff, #e100ff);  /* Standard gradient */
+    
+    -webkit-background-clip: text;  /* Vendor-prefixed version for WebKit browsers (Safari, Chrome) */
+    background-clip: text;  /* Standard property for modern browsers */
+
+    -webkit-text-fill-color: transparent; /* Gradient text for card titles */
+}
+
+.todo-card p {
+    color: #666;
+    margin-bottom: 15px;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+/* Buttons in todo cards */
+.todo-card button {
+    padding: 10px 20px;
+    margin-right: 10px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    background-color: #28a745;
+    color: white;
+    font-size: 0.9rem;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.todo-card button:hover {
+    box-shadow: 0 5px 15px rgba(40, 167, 69, 0.3);
+}
+
+.todo-card button:nth-child(2) {
+    background-color: #dc3545;
+}
+
+.todo-card button:nth-child(2):hover {
+    box-shadow: 0 5px 15px rgba(220, 53, 69, 0.3);
+}
+
+/* Responsive layout adjustments */
+@media (max-width: 768px) {
+    body {
+        padding: 20px;
+    }
+
+    .container {
+        width: 100%;
+        padding: 20px;
+    }
+
+    input, textarea {
+        width: 100%;
+    }
+
+    h1 {
+        font-size: 2.2rem;
+    }
+}
